@@ -39,7 +39,7 @@ We also trained 13 different policies (VLAs and ACT) to run the administration p
 
 ## Additional Links
 
-These can be found in the VIDEOS folder of this repository. 
+These can be found in the VIDEOS folder on google drive
 
 ## Code submission
 
