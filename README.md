@@ -1,56 +1,52 @@
 **### Make a fork or copy of this repo and fill in your team submission details! ###**
 
-# AMD_Robotics_Hackathon_2025_[Project Name]
+# AMD_Robotics_Hackathon_2025_Mecha Labs
 
 ## Team Information
 
-**Team:** *Your team number, name of your team, and members*
+Team 7 
+Mecha Labs
+Ali Imran, Yiyang Lu, Victor Oldensand, Christopher Piggott 
 
 **Summary:** *A brief description of your work*
 
+MedBot is a companion + medical robot that can provide and administer medications such as an epipen. 
 *< Images or video demonstrating your project >*
 
 ## Submission Details
 
 ### 1. Mission Description
-- *Real world application of your mission*
+- The goal was to build both a medical and companion bot for people with severe allergies, diabetes, and the elderly, by providing a LeKiwi robot with emotionally expressive capabilities and a medpack with epipens to support during allergic shocks as our first users. 
 
 ### 2. Creativity
-- *What is novel or unique in your approach?*
-- *Innovation in design, methodology, or application*
+- We modified the LeKiwi robot with medpacks (3d printed) and a custom adjusted overhead light and camera for better policy inference and training. We believe this creatively shows how both the mobile and manipulator components of the robot can fit into a real world use case. 
 
 ### 3. Technical implementations
-- *Teleoperation / Dataset capture*
-    - *<Image/video of teleoperation or dataset capture>*
-- *Training*
-- *Inference*
-    - *<Image/video of inference eval>*
+For emotional expressiveness we created a multithreaded dispatch architecture of prerecorded emotes that were controlled by a livekit agent, behaviors and communicating with the users. 
+
+For the medical application we implemented a sentry mode using mediapipe to identify pose landmarks and track the user. Then we used a depth map using a neural network for one camera to travel towards the leg of the owner (injection point). 
+
+<img width="2048" height="945" alt="image" src="https://github.com/user-attachments/assets/94fb3a9c-bb04-4f5e-8c34-9625b39a9619" />
+
+
+We also trained 13 different policies (VLAs and ACT) to run the administration process of the epipen, setting up camera angles and overhead light to improve its ability. We ultimately decided to use the ACT policy as it provided best performance to training time. 
+
+<img width="2048" height="945" alt="image" src="https://github.com/user-attachments/assets/23af6ee9-ace5-42f5-9c58-2406ad1ba245" />
 
 ### 4. Ease of use
-- *How generalizable is your implementation across tasks or environments?*
-- *Flexibility and adaptability of the solution*
-- *Types of commands or interfaces needed to control the robot*
+- Very easy to set up but as it is cabled now (didnt have time to run it with zmq messaging on the raspberry pi) it is limited in reach
+- One command to run sentry mode using a uv python project
 
 ## Additional Links
-*For example, you can provide links to:*
 
-- *Link to a video of your robot performing the task*
-- *URL of your dataset in Hugging Face*
-- *URL of your model in Hugging Face*
-- *Link to a blog post describing your work*
+These can be found in the VIDEOS folder of this repository. 
 
 ## Code submission
 
 This is the directory tree of this repo, you need to fill in the `mission` directory with your submission details.
 
 ```terminal
-AMD_Robotics_Hackathon_2025_ProjectTemplate-main/
-├── README.md
-└── mission
-    ├── code
-    │   └── <code and script>
-    └── wandb
-        └── <latest run directory copied from wandb of your training job>
+
 ```
 
 
