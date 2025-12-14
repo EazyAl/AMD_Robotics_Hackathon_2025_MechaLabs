@@ -11,7 +11,6 @@ Ali Imran, Yiyang Lu, Victor Oldensand, Christopher Piggott
 **Summary:** *A brief description of your work*
 
 MedBot is a companion + medical robot that can provide and administer medications such as an epipen. 
-*< Images or video demonstrating your project >*
 
 ## Submission Details
 
